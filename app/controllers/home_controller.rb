@@ -1,7 +1,12 @@
 class HomeController
   attr_reader :request
-  def initialize(request)
-    @request = request
+  def call(env)
+    @request = Rack::Request.new(env)
+    if request.get? && request.path_info == '/'
+      index
+    else
+      Rack::Response.new("File not found", 404)
+    end
   end
 
   def index
