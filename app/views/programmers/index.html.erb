@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Potd</title>
+</head>
+<body>
+  <h1>Checkout our programmers!</h1>
+  <ul>
+    <% programmers.each do |programmer| %>
+      <li><a href="/programmers/<%= programmer.id %>"><%= programmer.name %></a></li>
+    <% end %>
+  </ul>
+</body>
+</html>

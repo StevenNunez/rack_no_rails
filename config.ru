@@ -1,5 +1,5 @@
 require_relative 'config/environment'
+require_relative 'config/routes'
+
 use Rack::ContentType
-map '/' do
-  run HomeController.new
-end
+run Routes
